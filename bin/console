@@ -1,4 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-echo "Test" . \PHP_EOL;
+require_once __DIR__ . '/../src/Person.php';
+
+$peter = new Person();
+$peter->firstName = 'Peter';
+
+echo $peter->getFirstName() . \PHP_EOL;
