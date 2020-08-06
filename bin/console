@@ -2,9 +2,16 @@
 <?php
 
 require_once __DIR__ . '/../src/Person.php';
+require_once __DIR__ . '/../src/InvalidChangeNameRequestException.php';
 
-$peter = new Person('Peter');
+$peter = new Person('Peter', 'Newman');
 $peter->displayFirstName();
 
-$liza = new Person('Liza');
+$liza = new Person('Liza', 'Osborn');
 $liza->displayFirstName();
+
+try {
+    $peter->changeName('Peter', 'Newman');
+} catch (InvalidChangeNameRequestException $e) {
+    echo 'Please choose new first name or new last name at least.' . \PHP_EOL;
+}

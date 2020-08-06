@@ -1,18 +1,21 @@
 <?php
 
+require_once __DIR__ . '/InvalidChangeNameRequestException.php';
+
 class Person
 {
     private $firstName;
     private $lastName;
 
-    public function __construct($firstName)
+    public function __construct($firstName, $lastName)
     {
         $this->firstName = $firstName;
+        $this->lastName = $lastName;
     }
 
     public function changeName($newFirstName, $newLastName)
     {
-        $this->validNewName($newFirstName, $newLastName);
+        $this->validateNewName($newFirstName, $newLastName);
 
         $this->firstName = $newFirstName;
         $this->lastName = $newLastName;
@@ -23,13 +26,13 @@ class Person
         echo $this->firstName . \PHP_EOL;
     }
 
-    private function validNewName($firstName, $lastName)
+    private function validateNewName($firstName, $lastName)
     {
         if (
             $this->firstName === $firstName
             && $this->lastName === $lastName
         ) {
-            echo 'Don\'t waste my time!';
+            throw new InvalidChangeNameRequestException();
         }
     }
 }
