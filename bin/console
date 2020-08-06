@@ -3,7 +3,8 @@
 
 require_once __DIR__ . '/../src/Person.php';
 
-$peter = new Person();
-$peter->firstName = 'Peter';
+$peter = new Person('Peter');
+$peter->displayFirstName();
 
-echo $peter->getFirstName() . \PHP_EOL;
+$liza = new Person('Liza');
+$liza->displayFirstName();

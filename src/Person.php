@@ -2,10 +2,15 @@
 
 class Person
 {
-    public $firstName;
+    private $firstName;
 
-    public function getFirstName()
+    public function __construct($firstName)
     {
-        return $this->firstName;
+        $this->firstName = $firstName;
+    }
+
+    public function displayFirstName()
+    {
+        echo $this->firstName . \PHP_EOL;
     }
 }
