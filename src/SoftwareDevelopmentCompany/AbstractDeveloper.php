@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/DeveloperInterface.php';
+namespace App\SoftwareDevelopmentCompany;
 
 abstract class AbstractDeveloper implements DeveloperInterface
 {

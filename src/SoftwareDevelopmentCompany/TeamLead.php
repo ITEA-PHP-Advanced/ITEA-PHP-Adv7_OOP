@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/DeveloperInterface.php';
+namespace App\SoftwareDevelopmentCompany;
 
 final class TeamLead implements DeveloperInterface
 {

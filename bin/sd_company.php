@@ -1,9 +1,11 @@
 #!/usr/bin/env php
 <?php
 
-require_once __DIR__ . '/../src/SoftwareDevelopmentCompany/TeamLead.php';
-require_once __DIR__ . '/../src/SoftwareDevelopmentCompany/BackEndDeveloper.php';
-require_once __DIR__ . '/../src/SoftwareDevelopmentCompany/FrontEndDeveloper.php';
+require_once __DIR__ . '/autoloader.php';
+
+use App\SoftwareDevelopmentCompany\BackEndDeveloper;
+use App\SoftwareDevelopmentCompany\FrontEndDeveloper;
+use App\SoftwareDevelopmentCompany\TeamLead;
 
 $vasya = new BackEndDeveloper();
 $petya = new BackEndDeveloper();
